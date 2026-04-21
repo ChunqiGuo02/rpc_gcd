@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Relational Retrieval: Leveraging Known-Novel Interactions for Generalized Category Discovery.">
+  <meta name="keywords" content="RPC, GCD, Generalized Category Discovery">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPC: Relational Pattern Consistency for Generalized Category Discovery</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Relational Retrieval: Leveraging Known-Novel Interactions for Generalized Category Discovery</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yulin Xu<sup>1*</sup>,</span>
+            <span class="author-block">
+              Chunqi Guo<sup>2*</sup>,</span>
+            <span class="author-block">
+              Yuanzhen Shuai<sup>3</sup>,
+            </span>
+            <span class="author-block">
+              Jianyuan Ni<sup>4†</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="footnote"> <sup>*</sup>Equal Contribution &nbsp; <sup>†</sup>Corresponding Author</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Irvine &nbsp; <sup>2</sup>Sichuan Agricultural University</span><br>
+            <span class="author-block"><sup>3</sup>University College London &nbsp; <sup>4</sup>Juniata College</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Citation Link. -->
+              <span class="link-block">
+                <a href="#Bib"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>BibTex</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generalized Category Discovery (GCD) aims to classify unlabeled samples into both known and novel categories, given labeled data of known classes. Existing methods treat labeled and unlabeled data as separate learning streams---supervised for labeled, self-supervised for unlabeled---overlooking the potential for mutual enhancement. 
+          </p>
+          <p>
+            To address this, we tackle GCD from a novel <em>relational retrieval</em> perspective and propose Relational Pattern Consistency (RPC), a framework that explicitly couples labeled and unlabeled data through bidirectional knowledge transfer. RPC employs One-vs-All classifiers for soft ID/OOD decomposition, then introduces two mechanisms: (i) confidence-weighted embedding fusion with behavioral alignment to transfer semantic patterns from labeled to unlabeled known-class samples, and (ii) relational consistency learning that discovers novel categories through their invariant similarity patterns with known-class prototypes, transforming unreliable pseudo-labeling into well-defined relational pattern matching.
+          </p>
+          <p>
+            Experiments on six benchmarks demonstrate state-of-the-art performance, with RPC improving Old ACC by 1.4% on CUB over the strongest baseline while achieving strong gains on fine-grained tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  </div>
+</section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Framework</h2>
+          <div class="col justify-content-center text-center">
+            <div class="col-sm-12">
+                <img src="./static/images/figure1.png" style="width:100%">
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <br>
+            <p>
+            Overview of RPC. Soft ID/OOD decomposition via OVA classifiers enables bidirectional knowledge transfer: embedding fusion for known-class preservation and relational matching for category discovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Performance</h2>
+          <div class="col justify-content-center text-center">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We compare RPC with previous state-of-the-art GCD methods on the SSB benchmark and generic datasets. All methods are based on the DINO pre-trained backbone.
+            </p>
+            <style>
+              .academic-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                font-size: 0.85em;
+                font-family: 'Times New Roman', Times, serif;
+              }
+              .academic-table th, .academic-table td {
+                padding: 6px 8px;
+                text-align: center;
+              }
+              .academic-table th:first-child, .academic-table td:first-child {
+                text-align: left;
+              }
+              .academic-table thead tr:first-child th {
+                border-top: 2px solid #000;
+              }
+              .academic-table thead tr:last-child th {
+                border-bottom: 1px solid #000;
+              }
+              .academic-table tbody tr:last-child td {
+                border-bottom: 2px solid #000;
+              }
+              .academic-table tbody tr.sep-row td {
+                border-top: 1px solid #ccc;
+              }
+              .academic-table tbody tr.highlight-row {
+                background-color: #f0f0f0;
+              }
+            </style>
+            <div class="table-container" style="overflow-x: auto;">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2" style="vertical-align: middle;">Methods</th>
+                    <th colspan="3">CUB</th>
+                    <th colspan="3">Stanford Cars</th>
+                    <th colspan="3">FGVC-Aircraft</th>
+                    <th colspan="3">CIFAR10</th>
+                    <th colspan="3">CIFAR100</th>
+                    <th colspan="3">ImageNet-100</th>
+                  </tr>
+                  <tr>
+                    <th>All</th><th>Old</th><th>New</th>
+                    <th>All</th><th>Old</th><th>New</th>
+                    <th>All</th><th>Old</th><th>New</th>
+                    <th>All</th><th>Old</th><th>New</th>
+                    <th>All</th><th>Old</th><th>New</th>
+                    <th>All</th><th>Old</th><th>New</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>k-means</td>
+                    <td>34.3</td><td>38.9</td><td>32.1</td>
+                    <td>12.8</td><td>10.6</td><td>13.8</td>
+                    <td>16.0</td><td>14.4</td><td>16.8</td>
+                    <td>83.6</td><td>85.7</td><td>82.5</td>
+                    <td>52.0</td><td>52.2</td><td>50.8</td>
+                    <td>72.7</td><td>75.5</td><td>71.3</td>
+                  </tr>
+                  <tr>
+                    <td>RS+</td>
+                    <td>33.3</td><td>51.6</td><td>24.2</td>
+                    <td>28.3</td><td>61.8</td><td>12.1</td>
+                    <td>26.9</td><td>36.4</td><td>22.2</td>
+                    <td>46.8</td><td>19.2</td><td>60.5</td>
+                    <td>58.2</td><td>77.6</td><td>19.3</td>
+                    <td>37.1</td><td>61.6</td><td>24.8</td>
+                  </tr>
+                  <tr>
+                    <td>UNO+</td>
+                    <td>35.1</td><td>49.0</td><td>28.1</td>
+                    <td>35.5</td><td>70.5</td><td>18.6</td>
+                    <td>40.3</td><td>56.4</td><td>32.2</td>
+                    <td>68.6</td><td><b>98.3</b></td><td>53.8</td>
+                    <td>69.5</td><td>80.6</td><td>47.2</td>
+                    <td>70.3</td><td><b>95.0</b></td><td>57.9</td>
+                  </tr>
+                  <tr class="sep-row">
+                    <td>GCD</td>
+                    <td>51.3</td><td>56.6</td><td>48.7</td>
+                    <td>39.0</td><td>57.6</td><td>29.9</td>
+                    <td>45.0</td><td>41.1</td><td>46.9</td>
+                    <td>91.5</td><td><u>97.9</u></td><td>88.2</td>
+                    <td>73.0</td><td>76.2</td><td>66.5</td>
+                    <td>74.1</td><td>89.8</td><td>66.3</td>
+                  </tr>
+                  <tr>
+                    <td>PromptCAL</td>
+                    <td>62.9</td><td>64.4</td><td>62.1</td>
+                    <td>50.2</td><td>70.1</td><td>40.6</td>
+                    <td>52.2</td><td>52.2</td><td>52.3</td>
+                    <td><b>97.9</b></td><td>96.6</td><td>98.5</td>
+                    <td>81.2</td><td>84.2</td><td>75.3</td>
+                    <td>83.1</td><td>92.7</td><td>78.3</td>
+                  </tr>
+                  <tr>
+                    <td>DCCL</td>
+                    <td>63.5</td><td>60.8</td><td><u>64.9</u></td>
+                    <td>43.1</td><td>55.7</td><td>36.2</td>
+                    <td>-</td><td>-</td><td>-</td>
+                    <td>96.3</td><td>96.5</td><td>96.9</td>
+                    <td>75.3</td><td>76.8</td><td>70.2</td>
+                    <td>80.5</td><td>90.5</td><td>76.2</td>
+                  </tr>
+                  <tr>
+                    <td>SimGCD</td>
+                    <td>60.3</td><td>65.6</td><td>57.7</td>
+                    <td>53.8</td><td>71.9</td><td>45.0</td>
+                    <td>54.2</td><td>59.1</td><td>51.8</td>
+                    <td>97.1</td><td>95.1</td><td>98.1</td>
+                    <td>80.1</td><td>81.2</td><td>77.8</td>
+                    <td>83.0</td><td>93.1</td><td>77.9</td>
+                  </tr>
+                  <tr>
+                    <td>SPTNet</td>
+                    <td>65.8</td><td>68.8</td><td><b>65.1</b></td>
+                    <td>59.0</td><td>79.2</td><td>49.3</td>
+                    <td>59.3</td><td>61.8</td><td>58.1</td>
+                    <td>97.3</td><td>95.0</td><td><u>98.6</u></td>
+                    <td>81.3</td><td>84.3</td><td>75.6</td>
+                    <td>85.4</td><td>93.2</td><td>81.4</td>
+                  </tr>
+                  <tr>
+                    <td>ProtoGCD</td>
+                    <td>63.2</td><td>68.5</td><td>60.5</td>
+                    <td>53.8</td><td>73.7</td><td>44.2</td>
+                    <td>56.8</td><td>62.5</td><td>53.9</td>
+                    <td>97.3</td><td>95.3</td><td>98.2</td>
+                    <td>81.9</td><td>82.9</td><td><u>80.0</u></td>
+                    <td>84.0</td><td>92.2</td><td>79.9</td>
+                  </tr>
+                  <tr>
+                    <td>DebGCD</td>
+                    <td><u>66.3</u></td><td><u>71.8</u></td><td>63.5</td>
+                    <td><u>65.3</u></td><td><b>81.6</b></td><td><u>57.4</u></td>
+                    <td><u>61.7</u></td><td><u>63.9</u></td><td><u>60.6</u></td>
+                    <td>97.2</td><td>94.8</td><td>98.4</td>
+                    <td><u>83.0</u></td><td><u>84.6</u></td><td>79.9</td>
+                    <td><u>85.9</u></td><td><u>94.3</u></td><td><u>81.6</u></td>
+                  </tr>
+                  <tr class="highlight-row">
+                    <td><b>RPC (Ours)</b></td>
+                    <td><b>67.1</b></td><td><b>73.2</b></td><td>64.8</td>
+                    <td><b>65.5</b></td><td><u>81.0</u></td><td><b>57.8</b></td>
+                    <td><b>62.1</b></td><td><b>65.5</b></td><td><b>61.0</b></td>
+                    <td><u>97.6</u></td><td>95.2</td><td><b>98.8</b></td>
+                    <td><b>83.9</b></td><td><b>85.1</b></td><td><b>81.0</b></td>
+                    <td><b>86.2</b></td><td>93.8</td><td><b>82.1</b></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="text-align: center; font-size: 0.9em; margin-top: 10px;">
+                <b>Table 1:</b> Comparison with state-of-the-art methods on generic and fine-grained benchmarks. All values are percentages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Visualization</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>t-SNE visualization on CUB.</b> (a) DebGCD and (b) RPC. Red boxes show RPC achieves tighter intra-class grouping and clearer inter-class boundaries.
+            </p>
+            <div class="col justify-content-center text-center">
+                <div class="col-sm-12">
+                    <center>
+                    <img src="./static/images/fig_tsne.png" style="width:90%">
+                    </center>
+                </div>
+            </div>
+            <p style="margin-top: 20px;">
+              <b>Impact of hyperparameters λ1, λ2, and α on CUB.</b> Optimal values (λ1=0.5, λ2=0.3, α=0.3) balance preservation, discovery, and fusion. Performance degrades gracefully beyond these points, with overall variation within 1%.
+            </p>
+            <div class="col justify-content-center text-center">
+                <div class="col-sm-12">
+                    <center>
+                    <img src="./static/images/fig_hyper.png" style="width:90%">
+                    </center>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="Bib">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+<pre><code id="BibTeX">@article{xu2026relational,
+  author    = {Xu, Yulin and Guo, Chunqi and Shuai, Yuanzhen and Ni, Jianyuan},
+  title     = {Relational Retrieval: Leveraging Known-Novel Interactions for Generalized Category Discovery},
+  journal   = {ICMR},
+  year      = {2026},
+}
+</code><button class="copy-button" style="--button-hover-background: var(--example-color-alt); --button-color: var(--white); --button-background: var(--example-color-alt); --button-margin-bottom: 0;" class="copyButton btn" onclick="navigator.clipboard.writeText(document.getElementById('BibTeX').innerText).then(()=>alert('Copied!'))"><i class="fa fa-copy"></i></button></pre>
+    </div>
+  </section>
+
+
+  <section class="section" id="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+          <center>
+            This website is based on <a href="https://nerfies.github.io/">Nerfies</a>.
+          </center>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
